@@ -1,29 +1,33 @@
 %h1 Listing products
-
-%table
+%table.table.table-light.table-striped
   %thead
     %tr
-      %th Title
-      %th Description
-      %th Image url
-      %th Price
-      %th Supply
-      %th
-      %th
-      %th
-
+      %th{:scope => "col"} Title
+      %th{:scope => "col"} Description
+      %th{:scope => "col"} Image url
+      %th{:scope => "col"} Price
+      %th{:scope => "col"} Supply
   %tbody
     - @products.each do |product|
       %tr
-        %td= product.title
-        %td= product.description
-        %td= product.image_url
-        %td= product.price
-        %td= product.supply
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
-
+        %td
+          = image_tag(product.image_url, class: 'icon_image', width: 100, height:100)
+        %td
+          = product.title
+        %td
+          = product.description
+        %td
+          = product.image_url
+        %td
+          = product.price
+        %td
+          = product.supply
+        %td
+          = link_to 'Show', product
+        %td
+          = link_to 'Edit', edit_product_path(product)
+        %td
+          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
 %br
 
 = link_to 'New Product', new_product_path
