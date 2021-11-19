@@ -3,13 +3,13 @@
 one:
   title: MyString1
   description: MyText1
-  image_url: MyString1.png
+  image_url: https://toppng.com/uploads/preview/error-404-looks-like-you-found-a-dead-link-11563228083ugqcbvv143.png
   price: 9.99
   supply: 1
 
 two:
   title: MyString2
   description: MyText2
-  image_url: MyString2.png
+  image_url: https://toppng.com/uploads/preview/error-404-looks-like-you-found-a-dead-link-11563228083ugqcbvv143.png
   price: 9.99
   supply: 1

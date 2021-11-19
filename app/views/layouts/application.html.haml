@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title M✵C✵M Homepage
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta{content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    / Favicon
+    %link{href: "Homepage-MCM-webstore/assets/favicon.ico", rel: "icon", type: "image/x-icon"}/
+    / Bootstrap icons
+    %link{href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css", rel: "stylesheet"}/
+    / Core theme CSS (includes Bootstrap)
+    %link{href: "Homepage-MCM-webstore/css/styles.css", rel: "stylesheet"}/
+    %link{href: "stylesheets/_header1.scss", rel: "stylesheet"}/
+  %body
+    = render 'layouts/header1'
+    = yield
+    = render 'layouts/footer'
