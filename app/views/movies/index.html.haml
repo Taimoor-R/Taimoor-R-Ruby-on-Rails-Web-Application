@@ -9,20 +9,21 @@
     .container.px-4.px-lg-5.mt-5
       .row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3.row-cols-xl-4.justify-content-center
         - @products.each do |product|
-          .col.mb-5
-            .card.h-100
-              / Product image
-              = image_tag(product.image_url)
-              / Product details
-              .card-body.p-4
-                .text-center
-                  / Product name
-                  %h4.fw-bolder= product.title
-                  / Product price
-                  £
-                  %span.price= product.price
-                  %p.fw-bolder= product.description
-              / Product actions
-              .card-footer.p-4.pt-0.border-top-0.bg-transparent
-                .text-center
-                  %a.btn.btn-outline-dark.mt-auto{href: "#"} Add to cart
+          - if product.category == "Movies"
+            .col.mb-5
+              .card.h-100
+                / Product image
+                = image_tag(product.image_url)
+                / Product details
+                .card-body.p-4
+                  .text-center
+                    / Product name
+                    %h4.fw-bolder= product.title
+                    / Product price
+                    £
+                    %span.price= product.price
+                    %p.fw-bolder= product.description
+                / Product actions
+                .card-footer.p-4.pt-0.border-top-0.bg-transparent
+                  .text-center
+                    %a.btn.btn-outline-dark.mt-auto{href: "#"} Add to cart
