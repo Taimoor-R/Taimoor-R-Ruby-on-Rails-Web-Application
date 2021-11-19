@@ -12,13 +12,12 @@
           .col.mb-5
             .card.h-100
               / Product image
-              = image_tag(product.image_url)
+              = image_tag(product.image_url, width:291, height:325 )
               / Product details
               .card-body.p-4
                 .text-center
                   / Product name
                   %h4.fw-bolder= product.title
-                  %h4.fw-bolder= product.category
                   / Product price
                   £
                   %span.price= product.price
