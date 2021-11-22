@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'music/index'
   get 'movies/index'
   root 'homepage#index', as: 'homepage_index'
+  get 'carts/show'
   get 'movies' , to:  'movies#index'
+  get 'shoppingcart' , to:  'carts#show'
   get 'collectables' , to:  'collectables#index'
   get 'music' , to:  'music#index'
   resources :catagories
