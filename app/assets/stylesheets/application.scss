@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require my_styles
+ *= require _header1
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";

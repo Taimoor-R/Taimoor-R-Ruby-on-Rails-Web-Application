@@ -13,16 +13,19 @@
           .col.mb-5
             .card.h-100
               / Product image
-              = image_tag(product.image_url, width:291, height:325 )
+              = image_tag(product.image_url,height:325 )
               / Product details
               .card-body.p-4
                 .text-center
                   / Product name
                   %h4.fw-bolder= product.title
                   / Product price
-                  £
-                  %span.price= product.price
+                  %span.price= number_to_currency(product.price)
+                %br
                   %p.fw-bolder= product.description
+              -if(product.supply <= 1)
+                %h4.fw-bolder{:style => "color:#fb5195"}
+                  %center Out Of Stock
               / Product actions
               .card-footer.p-4.pt-0.border-top-0.bg-transparent
                 .text-center
