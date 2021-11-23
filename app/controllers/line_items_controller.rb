@@ -26,7 +26,7 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     product = Product.find(params[:product_id])
-    if product.supply > 1
+    if product.supply >= 1
       x = product.supply-1
       Product.update(params[:product_id],supply: x)
       @line_item = @cart.add_product(product)
@@ -59,6 +59,9 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
+    product = Product.find(params[:product_id])
+    x=line_item.quantity+product.supply
+    Product.update(params[:product_id],supply: x)
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }

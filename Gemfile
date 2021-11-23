@@ -59,6 +59,8 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'modernizr-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'devise', '~>4.7', '>=4.7.1'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

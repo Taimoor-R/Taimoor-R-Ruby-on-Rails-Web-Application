@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :line_items
   resources :carts
+  root 'homepage#index', as: 'homepage_index'
   get 'collectables/index'
   get 'music/index'
   get 'movies/index'
-  root 'homepage#index', as: 'homepage_index'
   get 'carts/show'
   get 'movies' , to:  'movies#index'
   get 'shoppingcart' , to:  'carts#show'

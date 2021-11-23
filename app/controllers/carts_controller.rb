@@ -50,6 +50,10 @@ class CartsController < ApplicationController
 
   # DELETE /carts/1 or /carts/1.json
   def destroy
+    @cart.line_items.each do |item|
+      product = Product.find(item['product_id'])
+      product.update_columns(supply: product.supply + item.quantity)
+    end
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|

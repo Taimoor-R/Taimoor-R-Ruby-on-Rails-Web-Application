@@ -24,7 +24,10 @@
                     %span.price= number_to_currency(product.price)
                   %br
                     %p.fw-bolder= product.description
-                / Product actions
-                .card-footer.p-4.pt-0.border-top-0.bg-transparent
-                  .text-center
-                    = button_to("Add to Cart", line_items_path(product_id: product) , class: "btn btn-outline-dark mt-auto")
+                  -if(product.supply <= 0)
+                    %h4.fw-bolder{:style => "color:#fb5195"}
+                      %center Out Of Stock
+                  / Product actions
+                  .card-footer.p-4.pt-0.border-top-0.bg-transparent
+                    .text-center
+                      = button_to("Add to Cart", line_items_path(product_id: product) , class: "btn btn-outline-dark mt-auto")

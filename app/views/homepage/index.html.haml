@@ -23,7 +23,7 @@
                   %span.price= number_to_currency(product.price)
                 %br
                   %p.fw-bolder= product.description
-              -if(product.supply <= 1)
+              -if(product.supply <= 0)
                 %h4.fw-bolder{:style => "color:#fb5195"}
                   %center Out Of Stock
               / Product actions
