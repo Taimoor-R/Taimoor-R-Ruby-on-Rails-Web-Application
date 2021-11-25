@@ -2,8 +2,8 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Sign Up
-        %p.lead.fw-normal.text-white-50.mb-0 Ready - Steady - Go
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
 %br
 %br
 .row.justify-content-center
@@ -17,6 +17,6 @@
       .form-group
         = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Confirm Password'
       .form-group
-        = f.submit "Sign up", class: "btn btn-primary btn-block btn-lg"
+        = f.submit t('.signupt'), class: "btn btn-primary btn-block btn-lg"
     .text-center
       = render "devise/shared/links"

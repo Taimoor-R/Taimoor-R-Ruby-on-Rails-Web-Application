@@ -59,9 +59,6 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
-    product = Product.find(params[:product_id])
-    x=line_item.quantity+product.supply
-    Product.update(params[:product_id],supply: x)
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }

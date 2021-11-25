@@ -9,6 +9,7 @@
 Cart.destroy_all
 LineItem.destroy_all
 Product.destroy_all
+User.destroy_all
 
 Product.create([
   {

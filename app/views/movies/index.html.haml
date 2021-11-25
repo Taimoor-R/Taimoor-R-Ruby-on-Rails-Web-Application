@@ -3,8 +3,8 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Movies
-        %p.lead.fw-normal.text-white-100.mb-0 🎬🎬🎬
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-100.mb-0=t('.subtitle')
   / Section
   %section.py-5
     .container.px-4.px-lg-5.mt-5
@@ -24,10 +24,11 @@
                     %span.price= number_to_currency(product.price)
                   %br
                     %p.fw-bolder= product.description
-                  -if(product.supply <= 0)
-                    %h4.fw-bolder{:style => "color:#fb5195"}
-                      %center Out Of Stock
+                -if(product.supply <= 0)
+                  .h4.fw-bolder{:style => "color:#fb5195"}
+                    %center=t('.Outstock')
+                -else
                   / Product actions
                   .card-footer.p-4.pt-0.border-top-0.bg-transparent
                     .text-center
-                      = button_to("Add to Cart", line_items_path(product_id: product) , class: "btn btn-outline-dark mt-auto")
+                      = button_to(t('.carttext'), line_items_path(product_id: product) , class: "btn btn-outline-dark mt-auto")

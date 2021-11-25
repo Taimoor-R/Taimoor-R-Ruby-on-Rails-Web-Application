@@ -4,7 +4,7 @@
     %header.bg-dark.py-4
       .container.px-4.px-lg-5.my-5
         %h2.display-4.fw-bolder{:style => "color:#fb5195"}
-          %center Your Cart is Empty
+          %center=t('.etitle')
     %section.py-5
       .container.px-4.px-lg-5.mt-5
         %center
@@ -13,17 +13,17 @@
     %header.bg-dark.py-5
       .container.px-4.px-lg-5.my-5
         .text-center.text-white
-          %h2.display-4.fw-bolder Your Cart
-          %p.lead.fw-normal.text-white-50.mb-0 Happy Shopping !!!
+          %h2.display-4.fw-bolder=t('.title')
+          %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
     %section.py-5
       .container.px-4.px-lg-5.mt-5
       %table.table.table-active.table-striped
         %thead
           %tr
-            %th{:scope => "col"} Items
+            %th{:scope => "col"}=t('.column1')
             %th{:scope => "col"}
-            %th{:scope => "col"} Title
-            %th{:scope => "col"} Price
+            %th{:scope => "col"}=t('.column2')
+            %th{:scope => "col"}=t('.column3')
 
         %tbody
           - @cart.line_items.each do |item|
@@ -37,11 +37,11 @@
               %td
                 = number_to_currency(item.product.price)
           %tr.total_line
-            %td{:colspan => "2"} Total
+            %td{:colspan => "2"}=t('.totalrow')
             %td{:colspan => "1"}
             %td.total_cell= number_to_currency(@cart.total_price)
 
-    = button_to("Empty cart", @cart, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-outline-dark mt-auto")
+    = button_to(t('.ecarttext'), @cart, method: :delete, data: { confirm:t('.ecartmsg') } , class: "btn btn-outline-dark mt-auto")
 
     = link_to 'Edit', edit_cart_path(@cart)
     \|

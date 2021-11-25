@@ -4,49 +4,49 @@
     .nav.left
       %span.gradient.skew
         %h1.logo.un-skew
-          %a{:href => "/"} M.C.M
+          %a{:href => "/"}=t('.title')
       %button#menu.btn-nav
         %span.fas.fa-bars
     .nav.right
       %a.nav-link.active{:href => "/"}
         %span.nav-link-span
-          %span.u-nav Home
+          %span.u-nav=t('.tab1')
       %a.nav-link{:href => "/movies"}
         %span.nav-link-span
-          %span.u-nav Movies
+          %span.u-nav=t('.tab2')
       %a.nav-link.active{:href => "/collectables"}
         %span.nav-link-span
-          %span.u-nav Collectables
+          %span.u-nav=t('.tab3')
       %a.nav-link{:href => "/music"}
         %span.nav-link-span
-          %span.u-nav Music
+          %span.u-nav=t('.tab4')
       %a.nav-link.active{:href => "#contact"}
         %span.nav-link-span
-          %span.u-nav Contact Us
+          %span.u-nav=t('.tab5')
       -if user_signed_in?
         = link_to destroy_user_session_path, method: :delete, :class => 'nav-link' do
           %span.nav-link-span
-            %span.u-nav Logout
+            %span.u-nav=t('.tab9')
             %svg.bi.bi-door-closed{:fill => "currentColor", :height => "16", :viewbox => "0 0 16 16", :width => "16", :xmlns => "http://www.w3.org/2000/svg"}
               %path{:d => "M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"}
               %path{:d => "M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"}
         = link_to @cart, :class => 'nav-link active' do
           %span.nav-link-span
-            %span.u-nav Cart
+            %span.u-nav=t('.tab10')
             %svg.bi.bi-cart{:fill => "white", :height => "16", :viewbox => "0 0 16 16", :width => "16", :xmlns => "http://www.w3.org/2000/svg"}
             %path{:d => "M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"}
 
       -else
         = link_to new_user_session_path, :class => 'nav-link' do
           %span.nav-link-span
-            %span.u-nav Login
+            %span.u-nav=t('.tab7')
             %svg.bi.bi-box-arrow-in-right{:fill => "currentColor", :height => "16", :viewbox => "0 0 16 16", :width => "16", :xmlns => "http://www.w3.org/2000/svg"}
               %path{:d => "M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z", "fill-rule" => "evenodd"}
               %path{:d => "M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z", "fill-rule" => "evenodd"}
 
-        = link_to new_user_registration_path, :class => 'nav-link' do
+        = link_to new_user_registration_path, :class => 'nav-link active' do
           %span.nav-link-span
-            %span.u-nav Sign-up
+            %span.u-nav=t('.tab8')
             %svg.bi.bi-box-arrow-in-up{:fill => "currentColor", :height => "16", :viewbox => "0 0 16 16", :width => "16", :xmlns => "http://www.w3.org/2000/svg"}
               %path{:d => "M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z", "fill-rule" => "evenodd"}
               %path{:d => "M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z", "fill-rule" => "evenodd"}

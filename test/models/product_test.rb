@@ -64,13 +64,13 @@ class ProductTest < ActiveSupport::TestCase
     product3.save
     assert product3.valid?
   end
-  test "Dont save Product with Supply less than 1" do
+  test "Dont save Product with Supply less than 0" do
     product1 = Product.new
     product1.title = "Unique title 1"
     product1.description = "Bfdsugusgisogh"
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
-    product1.supply = 0
+    product1.supply = -1
     product1.save
     refute product1.valid?
   end

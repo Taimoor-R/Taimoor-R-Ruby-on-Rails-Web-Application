@@ -2,8 +2,8 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Log in
-        %p.lead.fw-normal.text-white-50.mb-0 Ready - Steady - Go
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
 %br
 %br
 
@@ -19,8 +19,8 @@
         .form-check
           %label.form-check-label
             = f.check_box :remember_me, class: "form-check-input"
-            Remember me
+            =t('.rebme')
       .form-group
-        = f.submit "Log in", class: "btn btn-primary btn-block btn-lg"
+        = f.submit t('.logint'), class: "btn btn-primary btn-block btn-lg"
     .text-center
       = render "devise/shared/links"

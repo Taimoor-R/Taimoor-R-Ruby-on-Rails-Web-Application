@@ -30,4 +30,81 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: My Notes
+  app_description: A place where you can keep all of your notes.
+
+  homepage:
+      index:
+        title: Shop in style
+        subtitle: Movies-Collectables-Music
+        carttext: Add to Cart
+        Outstock: Out Of Stock
+
+  layouts:
+      header1:
+        title: M.C.M
+        tab1: Home
+        tab2: Movies
+        tab3: Collectables
+        tab4: Music
+        tab5: Contact US
+        tab7: Login
+        tab8: Sign-up
+        tab9: Logout
+        tab10: Cart
+
+  movies:
+     index:
+        title: Movies
+        subtitle: 🎬🎬🎬
+        carttext: Add to Cart
+        Outstock: Out Of Stock
+
+  music:
+     index:
+        title: Music
+        subtitle: 🎶🎶🎶
+        carttext: Add to Cart
+        Outstock: Out Of Stock
+
+
+  collectables:
+          index:
+            title: Collectables
+            subtitle: ✨✨✨
+            carttext: Add to Cart
+            Outstock: Out Of Stock
+
+  carts:
+     show:
+        etitle: Your Cart is Empty
+        title: Your Cart
+        subtitle: Happy Shopping !!!
+        column1: Items
+        column2: Title
+        column3: Price
+        totalrow: Total
+        ecarttext: Empty cart
+        ecartmsg: 'You will lose all Items in Cart. Do you still want to empty cart?'
+        checkout: Check Out
+
+  devise:
+    sessions:
+          new:
+            title:  Log in
+            subtitle: Ready - Steady - Go
+            rebme: Remember me
+            logint: 'Log in'
+
+    registrations:
+                new:
+                  title: Sign Up
+                  subtitle: Ready - Steady - Go
+                  signupt: 'Sign up'
+
+    password:
+          new:
+            title: Reset your password
+            subtitle: Dont Worry, We Got You !
+            subtitle2: Enter your email address below and we will send you a link to reset your password.
+            passsubt: 'Send Password Reset Email'
