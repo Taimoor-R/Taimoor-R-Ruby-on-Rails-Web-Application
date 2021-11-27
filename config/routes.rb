@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'movies/index'
   get 'carts/show'
   get 'movies' , to:  'movies#index'
-  get 'shoppingcart' , to:  'carts#show'
   get 'collectables' , to:  'collectables#index'
   get 'music' , to:  'music#index'
   resources :catagories

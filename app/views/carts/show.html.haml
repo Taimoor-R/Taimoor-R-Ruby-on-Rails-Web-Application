@@ -42,7 +42,7 @@
             %td.total_cell= number_to_currency(@cart.total_price)
 
     = button_to(t('.ecarttext'), @cart, method: :delete, data: { confirm:t('.ecartmsg') } , class: "btn btn-outline-dark mt-auto")
-
+    = button_to(t('.ecarttext'), @cart, method: :delete, data: { confirm:t('.ecartmsg') } , class: "btn btn-outline-dark mt-auto")
     = link_to 'Edit', edit_cart_path(@cart)
     \|
     = link_to 'Back', carts_path

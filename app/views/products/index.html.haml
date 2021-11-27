@@ -1,8 +1,10 @@
-%br
-%br
-%br
-%br
-%h1 Listing products
+
+%body
+  %header.bg-dark.py-5
+    .container.px-4.px-lg-5.my-5
+      .text-center.text-white
+        %h1.display-4.fw-bolder Inventory
+        %p.lead.fw-normal.text-white-50.mb-0 Finding inventory in the backroom is not always a joy.
 %table.table.table-light.table-striped
   %thead
     %tr
@@ -36,6 +38,7 @@
           = link_to 'Edit', edit_product_path(product)
         %td
           = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+%center
+= link_to 'New Product', new_product_path , class: "btn btn-outline-dark mt-auto"
 %br
-
-= link_to 'New Product', new_product_path
+%br
