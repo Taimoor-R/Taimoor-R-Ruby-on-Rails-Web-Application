@@ -1,13 +1,31 @@
--# frozen_string_literal: true
-= simple_form_for(@order) do |f|
-  = f.error_notification
-  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+%body
+  %header.bg-dark.py-5
+    .container.px-4.px-lg-5.my-5
+      .text-center.text-white
+        %h1.display-4.fw-bolder Checkout
+        %p.lead.fw-normal.text-white-50.mb-0 Thank You, Come Again
+.container{:style => "border:0"}
+  .row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3
+    .col.mb-5.text-center
+    -# frozen_string_literal: true
+    = simple_form_for(@order) do |f|
+      = f.error_notification
+      = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
-    = f.input :name
-    = f.input :address
-    = f.input :email
-    = f.input :pay_type
-
-  .form-actions
-    = f.button :submit
+      %br
+      .field
+        = f.label :name
+        = f.text_field :name, class:"form-control"
+      .field
+        = f.label :pay_type
+        = f.select(:pay_type, Order.pay_types.keys, { include_blank: false } ,class:"form-control")
+      .field
+        = f.label :address
+        = f.text_area :address, class:"form-control"
+      .field
+        = f.label :email
+        = f.text_field :email, class:"form-control"
+      %br
+      .actions
+      %center
+        = f.submit 'Place Order', class:"btn btn-primary"
