@@ -20,6 +20,8 @@
     - if user_signed_in?
       - if current_user.admin == true
         = render 'layouts/header'
+      - else
+        = render 'layouts/header1'
     - else
       = render 'layouts/header1'
     = yield

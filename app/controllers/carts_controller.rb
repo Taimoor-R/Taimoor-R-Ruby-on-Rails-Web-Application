@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cart, only: %i[ show edit update destroy ]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts or /carts.json
@@ -54,7 +55,12 @@ class CartsController < ApplicationController
       product = Product.find(item['product_id'])
       product.update_columns(supply: product.supply + item.quantity)
     end
+    if current_user.present?
+      @cart = current_user.current_cart
+      current_user.current_cart.destroy
+    end
     @cart.destroy if @cart.id == session[:cart_id]
+    current_user.current_cart.destroy
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to homepage_index_url, notice: 'Your cart is currently empty' }

@@ -53,6 +53,13 @@ en:
         tab9: Logout
         tab10: Cart
 
+      header:
+        title: M.C.M
+        tab1: Home
+        tab2: Inventory
+        tab3: Orders
+        tab4: Logout
+
   movies:
      index:
         title: Movies
@@ -102,7 +109,7 @@ en:
                   subtitle: Ready - Steady - Go
                   signupt: 'Sign up'
 
-    password:
+    passwords:
           new:
             title: Reset your password
             subtitle: Dont Worry, We Got You !

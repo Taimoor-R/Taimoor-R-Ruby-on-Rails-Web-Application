@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action do
+    redirect_to new_user_session_path unless current_user && current_user.admin == true
+  end
   before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
