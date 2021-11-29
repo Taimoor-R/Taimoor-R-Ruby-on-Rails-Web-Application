@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
-
+  has_many :orders, through: :line_items
   validates :title, :supply, :description, :image_url, :price, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.0, less_than_or_equal_to:1000.00}
   validates :supply, numericality: {greater_than_or_equal_to: 0}

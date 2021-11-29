@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action do
-    redirect_to new_user_session_path unless current_user && current_user.admin == true
+    redirect_to homepage_index_url unless current_user && current_user.admin == true
   end
   before_action :set_product, only: %i[ show edit update destroy ]
 
@@ -59,6 +59,9 @@ class ProductsController < ApplicationController
     end
   end
 
+
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -69,4 +72,3 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price, :supply, :category)
     end
-end

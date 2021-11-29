@@ -1,10 +1,14 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action do
+    redirect_to new_user_session_path unless current_user && current_user.admin == true
+  end
   before_action :set_order, only: %i[ show edit update destroy ]
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_order
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -29,12 +33,7 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(@cart)
     respond_to do |format|
       if @order.save
-        if current_user.present?
-          @cart = current_user.current_cart
-          current_user.current_cart.destroy
-        end
         @cart.destroy if @cart.id == session[:cart_id]
-        current_user.current_cart.destroy
         session[:cart_id] = nil
         format.html { redirect_to homepage_index_url, notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
@@ -75,8 +74,13 @@ class OrdersController < ApplicationController
 
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
-        redirect_to store_index_url, notice: 'Your cart is empty'
+        redirect_to homepage_index_url, notice: 'Your cart is empty'
       end
+    end
+
+    def invalid_order
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to homepage_index_url, notice: 'Invalid cart'
     end
 
     # Only allow a list of trusted parameters through.

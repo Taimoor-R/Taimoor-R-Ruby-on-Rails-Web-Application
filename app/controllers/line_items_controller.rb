@@ -5,6 +5,7 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_line_item, only: %i[ show edit update destroy ]
 
+
   # GET /line_items or /line_items.json
   def index
     @line_items = LineItem.all

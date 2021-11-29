@@ -10,6 +10,7 @@ Cart.destroy_all
 LineItem.destroy_all
 Product.destroy_all
 User.destroy_all
+Order.destroy_all
 User.create([{email: "taimoorriz@gmail.com", password: "1234asdf", admin: true},{email: "lucy@gmail.com", password: "1234asdf"}])
 Product.create([
   {

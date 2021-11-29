@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_cart, only: %i[ show edit update destroy ]
+  before_action do
+    redirect_to homepage_index_url unless @cart && current_user && current_user.cart.id == @cart.id
+  end
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts or /carts.json
   def index
