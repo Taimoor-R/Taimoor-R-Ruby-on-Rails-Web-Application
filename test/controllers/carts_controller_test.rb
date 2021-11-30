@@ -8,7 +8,6 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
      first_name: "name", last_name: "surename",
      password: "password", password_confirmation: "password")
      sign_in user
-    
   end
 
   test "should get index" do
