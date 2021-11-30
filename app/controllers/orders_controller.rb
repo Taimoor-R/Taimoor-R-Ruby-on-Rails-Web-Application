@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action do
-    redirect_to new_user_session_path unless current_user && current_user.admin == true
-  end
+  
   before_action :set_order, only: %i[ show edit update destroy ]
   include CurrentCart
   before_action :set_cart, only: [:new, :create]

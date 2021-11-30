@@ -1,11 +1,14 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @order = orders(:one)
+    sign_in users(:tom)
   end
 
   test "should get index" do
+
     get orders_url
     assert_response :success
   end
@@ -20,7 +23,6 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Order.count') do
       post orders_url, params: { order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type } }
     end
-
     assert_redirected_to homepage_index_url
   end
 
@@ -43,13 +45,12 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Order.count', -1) do
       delete order_url(@order)
     end
-
     assert_redirected_to orders_url
   end
 
   test "requires item in cart" do
     get new_order_url
-    assert_redirected_to store_index_path
+    assert_redirected_to homepage_index_url
     assert_equal flash[:notice], 'Your cart is empty'
   end
 

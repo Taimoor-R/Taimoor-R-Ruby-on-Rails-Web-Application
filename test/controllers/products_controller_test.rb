@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @product = products(:one)
     @test = {
@@ -10,6 +11,10 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
        price: 20.23,
        supply: 1
        }
+    user = User.create!(email: "example@mail.com",
+     first_name: "name", last_name: "surename",
+     password: "password", password_confirmation: "password", admin:true)
+     sign_in user
   end
 
   test "should get index" do

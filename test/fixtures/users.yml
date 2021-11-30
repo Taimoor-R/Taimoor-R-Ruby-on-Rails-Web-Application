@@ -10,4 +10,7 @@ one:
 #
 two:
   email: "mail1@mail.com"
+
+tom:
+  email: "tom@mail.com"
 # column: value

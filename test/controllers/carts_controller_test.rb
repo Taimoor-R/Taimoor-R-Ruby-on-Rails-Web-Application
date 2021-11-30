@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @cart = carts(:one)
+    user = User.create!(email: "example@mail.com",
+     first_name: "name", last_name: "surename",
+     password: "password", password_confirmation: "password")
+     sign_in user
+    
   end
 
   test "should get index" do
