@@ -59,6 +59,10 @@ en:
 
 
   layouts:
+      footer:
+        title: '© 2020 Copyright: M✵C✵M'
+        title1: M✵C✵M Homepage
+
       header1:
         title: M.C.M
         tab1: Home
@@ -161,8 +165,8 @@ en:
       show:
         title: Product Details
         subtitle: Details make perfection, and perfection is not a detail.
-        link1: Show
-        link2: Edit
+        link1: Edit
+        link2: Back
 
   orders:
       index:
@@ -191,3 +195,20 @@ en:
         subtitle: Details make perfection, and perfection is not a detail.
         link1: Show
         link2: Edit
+
+  line_items:
+        index:
+          title: Listing Line Items
+          col1: Product
+          col2: Cart
+          link1: Show
+          link2: Edit
+          link3: Destroy
+          link3m: Are you sure?
+          link4: New Line item
+
+        form:
+          submit: Submit
+
+        new:
+          link1: Show
