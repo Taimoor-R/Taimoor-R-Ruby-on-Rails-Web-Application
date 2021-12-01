@@ -27,5 +27,7 @@
         = render 'layouts/header1'
     - else
       = render 'layouts/header1'
+    - flash.each do |key, value|
+      = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
     = yield
     = render 'layouts/footer'

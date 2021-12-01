@@ -10,13 +10,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     @user.password = '1234abcd'
     assert @user.valid?
     assert @user.save
-    @user1 = User.new
-    @user1.email = 'test1@gmail.com'
-    @user1.first_name = 'test'
-    @user1.last_name = 'test2'
-    @user1.password = '1234abcd'
-    assert @user1.valid?
-    assert @user1.save
+
     @cart = Cart.new
     @cart.user = @user
     assert @cart.save
@@ -29,13 +23,16 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     sign_out @user
   end
 
-  #test "should create cart" do
-  #  assert_difference('Cart.count') do
-  #    post carts_url, params: {}
-  #  end
-  #
-  #  assert_redirected_to cart_url(Cart.last)
-  #end
+  test "should create cart" do
+    assert sign_in @user
+    assert_difference('Cart.count') do
+      post carts_url, params: { }
+    end
+
+    assert_redirected_to cart_url(Cart.last)
+  end
+
+
 
   test "should show cart" do
     assert sign_in @user
@@ -68,4 +65,22 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to homepage_index_url
     sign_out @user
   end
+end
+
+
+test "should create cart" do
+  @user1 = User.new
+  @user1.email = 'test1@gmail.com'
+  @user1.first_name = 'test'
+  @user1.last_name = 'test2'
+  @user1.password = '1234abcd'
+  assert @user1.valid?
+  assert @user1.save
+  sign_in @user1
+  assert_difference('Cart.count') do
+    post carts_url, params: {user_id: @user1.id}
+  end
+
+  assert_redirected_to cart_url(Cart.last)
+  sign_out @user1
 end

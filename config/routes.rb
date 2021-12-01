@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :orders
   root 'homepage#index', as: 'homepage_index'
+  get 'contact', to: 'homepage#contact'
   get 'collectables/index'
   get 'music/index'
   get 'movies/index'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   get 'movies' , to:  'movies#index'
   get 'collectables' , to:  'collectables#index'
   get 'music' , to:  'music#index'
+  post 'request_contact', to: 'homepage#request_contact'
   resources :catagories
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
