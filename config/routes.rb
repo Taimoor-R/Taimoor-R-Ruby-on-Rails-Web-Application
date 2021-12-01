@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'carts/show'
   get 'movies' , to:  'movies#index'
   get 'collectables' , to:  'collectables#index'
+  get 'orders' , to:  'orders#index'
   get 'music' , to:  'music#index'
   post 'request_contact', to: 'homepage#request_contact'
   resources :catagories

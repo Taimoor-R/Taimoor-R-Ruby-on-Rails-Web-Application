@@ -2,8 +2,8 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Product Details
-        %p.lead.fw-normal.text-white-50.mb-0  "Details make perfection, and perfection is not a detail." - Leonardo Da Vinci
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
 .container.px-4.px-lg-5.mt-5
   .row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3.row-cols-xl-4.justify-content-center
     .col.mb-5
@@ -20,6 +20,6 @@
           %br
             %p.fw-bolder= @product.description
             .text-center
-              = link_to 'Edit', edit_product_path(@product)
+              = link_to t('.link1'), edit_product_path(@product)
               \|
-              = link_to 'Back', products_path
+              = link_to t('.link2'), products_path

@@ -8,7 +8,7 @@
 .container{:style => "border:0"}
   .row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3
     .col.mb-5.text-center
-    
+
     = form_tag request_contact_path, method: 'post' do
       %br
       .field
@@ -27,3 +27,4 @@
       .actions
       %center
         = submit_tag t('.submit'), class:"btn btn-primary"
+      

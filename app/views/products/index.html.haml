@@ -3,18 +3,21 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Inventory
-        %p.lead.fw-normal.text-white-50.mb-0 Finding inventory in the backroom is not always a joy.
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
 %table.table.table-light.table-striped
   %thead
     %tr
       %th{:scope => "col"}
-      %th{:scope => "col"} Title
-      %th{:scope => "col"} Category
-      %th{:scope => "col"} Description
-      %th{:scope => "col"} Image url
-      %th{:scope => "col"} Price
-      %th{:scope => "col"} Supply
+      %th{:scope => "col"}=t('.col1')
+      %th{:scope => "col"}=t('.col2')
+      %th{:scope => "col"}=t('.col3')
+      %th{:scope => "col"}=t('.col4')
+      %th{:scope => "col"}=t('.col5')
+      %th{:scope => "col"}=t('.col6')
+      %th{:scope => "col"}=t('.col7')
+      %th{:scope => "col"}=t('.col8')
+      %th{:scope => "col"}=t('.col9')
   %tbody
     - @products.each do |product|
       %tr
@@ -33,12 +36,12 @@
         %td
           = product.supply
         %td
-          = link_to 'Show', product
+          = link_to t('.link1'), product
         %td
-          = link_to 'Edit', edit_product_path(product)
+          = link_to t('.link2'), edit_product_path(product)
         %td
-          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('.link3'), product, method: :delete, data: { confirm: t('.link3m') }
 %center
-= link_to 'New Product', new_product_path , class: "btn btn-outline-dark mt-auto"
+  = link_to t('.link4'), new_product_path , class: "btn btn-outline-dark mt-auto"
 %br
 %br

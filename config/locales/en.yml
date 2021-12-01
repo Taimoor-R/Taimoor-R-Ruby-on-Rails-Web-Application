@@ -30,8 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: My Notes
-  app_description: A place where you can keep all of your notes.
+  app_title: MCM-Webstore
+  app_description: A one-stop where you can shop for all your favourite Movies, Music and Collectables.
 
   homepage:
       index:
@@ -52,10 +52,12 @@ en:
         message: "Message:"
         enter_message: What do you want to say?
         submit: Contact Us
-        
+
       request_contact:
-        no_email: You must supply an email address
-        email_sent: Thank you. We will be in touch shortly.
+                no_email: You must supply an email address
+                email_sent: Thank you. We will be in touch shortly.
+
+
   layouts:
       header1:
         title: M.C.M
@@ -131,3 +133,61 @@ en:
             subtitle: Dont Worry, We Got You !
             subtitle2: Enter your email address below and we will send you a link to reset your password.
             passsubt: 'Send Password Reset Email'
+
+  products:
+      index:
+        title: Inventory
+        subtitle: Finding inventory in the backroom is not always a joy.
+        col1: Title
+        col2: Category
+        col3: Description
+        col4: Image url
+        col5: Price
+        col6: Supply
+        col7: Show Product Layout
+        col8: Edit Product Details
+        col9: Remove Product From Store
+        link1: Show
+        link2: Edit
+        link3: Destroy
+        link3m: Are you sure?
+        link4: New Product
+
+      form:
+        title:  Edit Product
+        subtitle: The process of editing is what I enjoy most - putting the pieces together and making sense out of them.
+        submit: save
+
+      show:
+        title: Product Details
+        subtitle: Details make perfection, and perfection is not a detail.
+        link1: Show
+        link2: Edit
+
+  orders:
+      index:
+        title: Orders
+        subtitle: Finding inventory in the backroom is not always a joy.
+        col1: Order id
+        col2: Name
+        col3: Email
+        col4: Order Description
+        col5: Total Price
+        col6: Payment Method
+        col7: Pending Dispatch
+        col4_1: Item Name
+        col4_2: Item quantity
+        col4_3: Price/Item
+        link1: Dispatch
+        link1m: Have you Dispatched the Order,as Order will be Removed form Registry
+
+      form:
+        title:  Checkout
+        subtitle: Thank You, Come Again
+        submit: Place Order
+
+      show:
+        title: Product Details
+        subtitle: Details make perfection, and perfection is not a detail.
+        link1: Show
+        link2: Edit

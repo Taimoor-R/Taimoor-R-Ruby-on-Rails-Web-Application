@@ -2,9 +2,8 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Edit Product
-        %p.lead.fw-normal.text-white-50.mb-0 The process of editing is what I enjoy most - putting the pieces together and making sense out of them.
-.container{:style => "border:0"}
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
   .row.gx-4.gx-lg-5.row-cols-2.row-cols-md-3
     .col.mb-5.text-center
     = simple_form_for @product do |f|
@@ -36,4 +35,4 @@
       %br
       .actions
       %center
-        = f.submit 'Save', class:"btn btn-primary"
+        = f.submit t('.submit'), class:"btn btn-primary"

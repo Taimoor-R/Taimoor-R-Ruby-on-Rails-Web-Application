@@ -2,17 +2,18 @@
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
-        %h1.display-4.fw-bolder Orders
-        %p.lead.fw-normal.text-white-50.mb-0 Finding inventory in the backroom is not always a joy.
+        %h1.display-4.fw-bolder=t('.title')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitle')
 %table.table.table-light.table-striped
   %thead
     %tr
-      %th{:scope => "col"} Order id
-      %th{:scope => "col"} Name
-      %th{:scope => "col"} Email
-      %th{:scope => "col"} Order Description
-      %th{:scope => "col"} Total Price
-      %th{:scope => "col"} Payment Method
+      %th{:scope => "col"}=t('.col1')
+      %th{:scope => "col"}=t('.col2')
+      %th{:scope => "col"}=t('.col3')
+      %th{:scope => "col"}=t('.col4')
+      %th{:scope => "col"}=t('.col5')
+      %th{:scope => "col"}=t('.col6')
+      %th{:scope => "col"}=t('.col7')
   %tbody
     - @orders.each do |order|
       %tr
@@ -27,9 +28,9 @@
             %thead
               %tr
                 %th{:scope => "col"}
-                %th{:scope => "col"} Item Name
-                %th{:scope => "col"} Item quantity
-                %th{:scope => "col"} Price/Item
+                %th{:scope => "col"}=t('.col4_1')
+                %th{:scope => "col"}=t('.col4_2')
+                %th{:scope => "col"}=t('.col4_3')
             %tbody
               - order.line_items.each do |item|
                 %tr
@@ -46,4 +47,4 @@
         %td
           = order.pay_type
         %td
-          = link_to 'Destroy', order, method: :delete, data: { confirm: 'Have you Dispatched the Order' }
+          = link_to t('.link1'), order, method: :delete, data: { confirm: t('.link1m') }
