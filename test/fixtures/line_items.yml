@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# LINE ITEMS FILE PRODUCT AND CART 
 one:
   product: two
   cart: one

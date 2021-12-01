@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# CATEGORY NOT USED AS SAME IS IMPELENETED IN PRODUCTS TABLE 
 one:
   Type: MyString
 

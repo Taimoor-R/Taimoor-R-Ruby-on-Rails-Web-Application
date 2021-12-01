@@ -1,5 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# CREATES SAMPLE PRODUCTS FOR TESTING
 one:
   title: MyString1
   description: MyText1

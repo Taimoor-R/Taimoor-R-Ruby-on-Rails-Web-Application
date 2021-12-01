@@ -48,10 +48,5 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to orders_url
   end
 
-  test "requires item in cart" do
-    get new_order_url
-    assert_redirected_to homepage_index_url
-    assert_equal flash[:notice], 'Your cart is empty'
-  end
 
 end

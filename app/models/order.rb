@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   enum pay_type: { # enum for selection menu in order payment type
     "Check"          => 0,
     "Credit card"    => 1,
-    "Purchase order" => 2
+    "Bank Transfer" => 2
 }
   validates :name, :address, :email, presence: true # validations for presence of these params
   validates :pay_type, inclusion: pay_types.keys # validation for paytype keys to be present

@@ -28,7 +28,7 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
+# ALL LOCALIZED STRINGS FOR ALL VIEWS IN THIS FILE.
 en:
   app_title: MCM-Webstore
   app_description: A one-stop where you can shop for all your favourite Movies, Music and Collectables.

@@ -12,32 +12,32 @@
 
 ActiveRecord::Schema.define(version: 2021_11_28_184142) do
 
-  create_table "carts", force: :cascade do |t|
+  create_table "carts", force: :cascade do |t| # TABLE FOR CARTS
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["user_id"], name: "index_carts_on_user_id"
+    t.index ["user_id"], name: "index_carts_on_user_id" # CART LINKED TO USERS
   end
 
-  create_table "catagories", force: :cascade do |t|
+  create_table "catagories", force: :cascade do |t| # TABLES FOR CATEGORIES NOT USED THOUGH
     t.string "Type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "line_items", force: :cascade do |t|
+  create_table "line_items", force: :cascade do |t| # TABLE FOR LINE ITEMS
     t.integer "product_id"
     t.integer "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
     t.integer "order_id"
-    t.index ["cart_id"], name: "index_line_items_on_cart_id"
-    t.index ["order_id"], name: "index_line_items_on_order_id"
-    t.index ["product_id"], name: "index_line_items_on_product_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id" # LINKED TO CART BY CART ID
+    t.index ["order_id"], name: "index_line_items_on_order_id"# LINKED TO ORDER BY ORDER ID
+    t.index ["product_id"], name: "index_line_items_on_product_id" # LINKED PRODUCTS BY PRODUCT ID
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t| # TABLE FOR ORDERS
     t.string "name"
     t.text "address"
     t.string "email"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_11_28_184142) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", force: :cascade do |t| # TABLES FOR PRODUCTS
     t.string "title", null: false
     t.text "description", null: false
     t.string "image_url", default: "https://commercial.bunn.com/img/image-not-available.png"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_11_28_184142) do
     t.string "category"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade do |t| # USERS TABLE MADE FROM DEVISE
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_11_28_184142) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
+    t.boolean "admin", default: false # ADMIN FUNCTIONALITY ADDED
     t.text "bio"
     t.string "first_name"
     t.string "last_name"

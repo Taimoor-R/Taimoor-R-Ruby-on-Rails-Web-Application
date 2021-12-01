@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Cart.destroy_all
-LineItem.destroy_all
-Product.destroy_all
-User.destroy_all
-Order.destroy_all
-User.create([{email: "taimoorriz@gmail.com", password: "1234asdf", admin: true},{email: "lucy@gmail.com", password: "1234asdf"}])
+Cart.destroy_all # DESTROY ALL CART DATA STORED PREVIOUSLY
+LineItem.destroy_all # DESTROY ALL LINE ITEM DATA STORED PREVIOUSLY
+Product.destroy_all # DESTROY ALL PRODUCTS DATA STORED PREVIOUSLY
+User.destroy_all # DESTROY ALL USER DATA STORED PREVIOUSLY
+Order.destroy_all # DESTROY ALL ORDER DATA STORED PREVIOUSLY
+User.create([{email: "taimoorriz@gmail.com", password: "1234asdf", admin: true},{email: "lucy@gmail.com", password: "1234asdf"}]) # CREATE USERS 1 WITH ADMIN ACCESS AND 1 WITH USER ACCESS
+# CREATE ALL PRE-EXISITING PRODUCTS FOR PRODUCTS TABLE
 Product.create([
   {
     title: "Venom: Let there be Carnage",
@@ -110,4 +111,4 @@ Product.create([
     category: "Collectables"
   }
   ])
-  p "Created #{Product.count} entries."
+  p "Created #{Product.count} entries." # PRINT ON CONSOLE NUMBER OF ENTRIES CREATED FOR PRODUCTS
