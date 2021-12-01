@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
+  # redurects user to homepage if they try to access products table and are not admin
   before_action do
-    redirect_to homepage_index_url unless current_user && current_user.admin == true
+    redirect_to homepage_index_url unless current_user && current_user.admin == true # checks for current_user.admin if its set to true or not the checks if user is present else redirects to home page
   end
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show edit update destroy ] # beforeaction to set products
 
   # GET /products or /products.json
   def index

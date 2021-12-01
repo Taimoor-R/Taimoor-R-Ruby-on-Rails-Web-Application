@@ -1,8 +1,8 @@
 class LineItemsController < ApplicationController
-  include CurrentCart
-  before_action :authenticate_user!
-  before_action :set_cart, only: [:create]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  include CurrentCart # INCLUDED CURRENTCART HELPER MODULE TO SET CURRENT CART TO CURRENT USER_CART
+  before_action :authenticate_user! # authenticates user before making LINEITEMS AND LIMITS access
+  before_action :set_cart, only: [:create] #SETS CART
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy] #sets line items beforeactiosn
   before_action :set_line_item, only: %i[ show edit update destroy ]
 
 
@@ -27,10 +27,12 @@ class LineItemsController < ApplicationController
 
   # POST /line_items or /line_items.json
   def create
+    # if current product in question has supply more then or equal to 1
+    #then in update product table and decrement product supply in table by 1 as it has been added to lineitems
     product = Product.find(params[:product_id])
     if product.supply >= 1
       x = product.supply-1
-      Product.update(params[:product_id],supply: x)
+      Product.update(params[:product_id],supply: x) # updates product supply by decremting 1
       @line_item = @cart.add_product(product)
       respond_to do |format|
         if @line_item.save
@@ -41,7 +43,7 @@ class LineItemsController < ApplicationController
           format.json { render json: @line_item.errors, status: :unprocessable_entity }
         end
       end
-    else
+    else # if product supply is less then 1 then redirect to hompage as item is out of stock
       redirect_to homepage_index_url
     end
   end

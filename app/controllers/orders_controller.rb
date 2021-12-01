@@ -1,12 +1,11 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user! # authenticates user before making cart
+
   before_action :set_order, only: %i[ show edit update destroy ]
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
-  before_action :ensure_cart_isnt_empty, only: :new
+  before_action :set_cart, only: [:new, :create] #SETS CARTTS
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  rescue_from ActiveRecord::RecordNotFound, with: :invalid_order
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_order #rescues form activerecord error by invoking invalid_order action in bottom of page
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -70,14 +69,8 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
-    def ensure_cart_isnt_empty
-      if @cart.line_items.empty?
-        redirect_to homepage_index_url, notice: 'Your cart is empty'
-      end
-    end
-
-    def invalid_order
-      logger.error "Attempt to access invalid cart #{params[:id]}"
+    def invalid_order # invooked when order with random order id is acessed and it redirects to homepage
+      logger.error "Attempt to access invalid order #{params[:id]}"
       redirect_to homepage_index_url, notice: 'Invalid cart'
     end
 

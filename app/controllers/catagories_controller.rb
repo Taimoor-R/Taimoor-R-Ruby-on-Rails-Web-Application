@@ -1,4 +1,5 @@
 class CatagoriesController < ApplicationController
+  # THIS IMPLEMENATION HAS BEEN ADDED TO PRODUCT TABLE INSTEAD OF USING SEPRATE CONTROLLER PLEASE DISREGARD, I HAVE ONLY LEFT THIS HERE TO SHOW MY THOUGHT PROCESS BEFORE ITEGRATING CATEGOREIS INTO PRODUCTS TABLE.
   before_action :set_catagory, only: %i[ show edit update destroy ]
 
   # GET /catagories or /catagories.json
