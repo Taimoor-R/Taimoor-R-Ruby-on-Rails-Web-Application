@@ -11,7 +11,7 @@ LineItem.destroy_all # DESTROY ALL LINE ITEM DATA STORED PREVIOUSLY
 Product.destroy_all # DESTROY ALL PRODUCTS DATA STORED PREVIOUSLY
 User.destroy_all # DESTROY ALL USER DATA STORED PREVIOUSLY
 Order.destroy_all # DESTROY ALL ORDER DATA STORED PREVIOUSLY
-User.create([{email: "taimoorriz@gmail.com", password: "1234asdf", admin: true},{email: "lucy@gmail.com", password: "1234asdf"}]) # CREATE USERS 1 WITH ADMIN ACCESS AND 1 WITH USER ACCESS
+User.create([{email: "taimoorriz@gmail.com", password: "1234asdf", admin: true},{email: "timmy@gmail.com", password: "1234asdf"}]) # CREATE USERS 1 WITH ADMIN ACCESS AND 1 WITH USER ACCESS
 # CREATE ALL PRE-EXISITING PRODUCTS FOR PRODUCTS TABLE
 Product.create([
   {

@@ -27,4 +27,11 @@ class UserTest < ActiveSupport::TestCase
     user2.save
     refute user2.valid?
   end
+  test " Doesnot save User with password less than 6 or more than 40 digits" do # saves valid user
+    user1 = User.new
+    user1.email = 'course@work.com'
+    user1.password = '1234'
+    user1.save
+    refute user1.valid?
+  end
 end

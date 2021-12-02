@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :orders
   root 'homepage#index', as: 'homepage_index'
   get 'contact', to: 'homepage#contact'
+  get 'admin', to: 'homepage#admin'
   get 'collectables/index'
   get 'music/index'
   get 'movies/index'

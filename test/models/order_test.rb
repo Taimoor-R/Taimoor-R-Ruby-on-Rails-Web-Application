@@ -17,6 +17,15 @@ class OrderTest < ActiveSupport::TestCase
     order.save
     refute order.valid?
   end
+  test " Doesnt Save Order with wrong email format " do # SAVES VALID ORDER
+    order = Order.new
+    order.name = 'timmy'
+    order.address = 'Bfdsugusgisogh123'
+    order.email = 'coursework.com'
+    order.pay_type = 'Bank Transfer'
+    order.save
+    refute order.valid?
+  end
   test " Doesnt Save Order without correct payment method " do # SAVES VALID ORDER
     order = Order.new
     order.name = 'timmy'

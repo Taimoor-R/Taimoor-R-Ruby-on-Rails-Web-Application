@@ -5,6 +5,7 @@ class Order < ApplicationRecord
     "Credit card"    => 1,
     "Bank Transfer" => 2
 }
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates :name, :address, :email, presence: true # validations for presence of these params
   validates :pay_type, inclusion: pay_types.keys # validation for paytype keys to be present
 

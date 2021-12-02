@@ -54,14 +54,15 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-gem 'haml-rails'
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'modernizr-rails'
-gem 'jquery-rails'
+gem 'haml-rails' # haml gem installed
+gem 'bootstrap-sass', '~> 3.4.1' # added bootstrap
+gem 'modernizr-rails' # added modernizer
+gem 'jquery-rails' # jquery
 gem 'jquery-turbolinks'
-gem 'devise', '~>4.7', '>=4.7.1'
-gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
-gem 'simple_form'
+gem 'devise', '~>4.7', '>=4.7.1' # devise used for user authentication
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4' # template for views used for beautification of devise forms.
+gem 'simple_form' # make forms more beautiful
+gem 'chartkick'
 gem 'rails-controller-testing'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

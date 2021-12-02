@@ -1,4 +1,11 @@
 %body
+-if current_user && current_user.admin
+  %header.bg-dark.py-5
+    .container.px-4.px-lg-5.my-5
+      .text-center.text-white
+        %h1.display-4.fw-bolder=t('.titlea')
+        %p.lead.fw-normal.text-white-50.mb-0=t('.subtitlea')
+-else
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
       .text-center.text-white
@@ -14,11 +21,11 @@
     / Wrapper for slides
     .carousel-inner
       .item.active
-        %img{:alt => "Los Angeles", :src => "assets/collectables.jpg", :style => "width:100%;"}/
+        %img{:alt => "collectables", :src => "assets/collectables.jpg", :style => "width:100%;"}/
       .item
-        %img{:alt => "Chicago", :src => "assets/movies.jpg", :style => "width:100%;"}/
+        %img{:alt => "movies", :src => "assets/movies.jpg", :style => "width:100%;"}/
       .item
-        %img{:alt => "New york", :src => "assets/music.jpg", :style => "width:100%;"}/
+        %img{:alt => "music", :src => "assets/music.jpg", :style => "width:100%;"}/
     / Left and right controls
     %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
       %span.glyphicon.glyphicon-chevron-left

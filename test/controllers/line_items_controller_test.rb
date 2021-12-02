@@ -4,7 +4,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @line_item = line_items(:one)
     user = User.create!(email: "example@mail.com",
-     first_name: "name", last_name: "surename",
      password: "password", password_confirmation: "password")
      sign_in user
   end
