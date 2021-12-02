@@ -38,7 +38,19 @@ en:
         title: Shop in style
         subtitle: Movies-Collectables-Music
         titlea: Admin
-        subtitlea: Welcome Back! 
+        subtitlea: Welcome Back!
+        col1: Product Supply Chart
+        col2: Out of Stock Products
+        col3: Product Title
+        col4: Product Description
+        col5: Status
+        col6: Out of Stock
+        col7: Current Orders Chart
+        col8: Current Orders List
+        col9: Order ID
+        col10: Order Email
+        col10: Status
+        col11: Pending Dispatch
         carttext: Add to Cart
         Outstock: Out Of Stock
 

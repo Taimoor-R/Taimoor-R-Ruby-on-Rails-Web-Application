@@ -9,19 +9,19 @@
   %table.table.table-light.table-striped
     %thead
       %tr
-        %th{:scope => "col"} Product Supply Chart
-        %th{:scope => "col"} Out of Stock Products
+        %th{:scope => "col"}=t('.col1')
+        %th{:scope => "col"}=t('.col2')
     %tbody
       %tr
         %td
-          = column_chart @products.group(:title).sum(:supply), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Supply", ytitle: "Products"
+          = column_chart @products.group(:title).sum(:supply), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Products", ytitle: "Supply"
         %td
           %table.table.table-light.table-dark
             %thead
               %tr
-                %th{:scope => "col"} Product Title
-                %th{:scope => "col"} Product Description
-                %th{:scope => "col"} Status
+                %th{:scope => "col"}=t('.col3')
+                %th{:scope => "col"}=t('.col4')
+                %th{:scope => "col"}=t('.col5')
             %tbody
               - @products.each do |product|
                 -if product.supply <= 0
@@ -40,7 +40,7 @@
     %tbody
       %tr
         %td
-          = line_chart @orders.group(:id).sum(:created_at), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Order ID", ytitle: "Time"
+          = line_chart @orders.group(:created_at).sum(:id), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Date Order Placed", ytitle: "Order ID"
         %td
           %table.table.table-light.table-dark
             %thead
@@ -55,8 +55,8 @@
                     = order.id
                   %td
                     = order.email
-                    %td
-                      Pending Dispatch
+                  %td
+                    Pending Dispatch
 
 -else
   %header.bg-dark.py-5
