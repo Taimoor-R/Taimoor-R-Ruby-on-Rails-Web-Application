@@ -31,12 +31,12 @@
                     %td
                       = product.description
                     %td
-                      Out of Stock
+                      =t('.col6')
   %table.table.table-light.table-striped
     %thead
       %tr
-        %th{:scope => "col"} Current Orders Chart
-        %th{:scope => "col"} Current Orders List
+        %th{:scope => "col"}=t('.col7')
+        %th{:scope => "col"}=t('.col8')
     %tbody
       %tr
         %td
@@ -45,9 +45,9 @@
           %table.table.table-light.table-dark
             %thead
               %tr
-                %th{:scope => "col"} Order ID
-                %th{:scope => "col"} Order Email
-                %th{:scope => "col"} Status
+                %th{:scope => "col"}=t('.col9')
+                %th{:scope => "col"}=t('.col10')
+                %th{:scope => "col"}=t('.col11')
             %tbody
               - @orders.each do |order|
                 %tr
@@ -56,7 +56,7 @@
                   %td
                     = order.email
                   %td
-                    Pending Dispatch
+                    =t('.col12')
 
 -else
   %header.bg-dark.py-5

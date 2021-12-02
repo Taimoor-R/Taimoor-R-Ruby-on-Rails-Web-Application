@@ -49,8 +49,8 @@ en:
         col8: Current Orders List
         col9: Order ID
         col10: Order Email
-        col10: Status
-        col11: Pending Dispatch
+        col11: Status
+        col12: Pending Dispatch
         carttext: Add to Cart
         Outstock: Out Of Stock
 
