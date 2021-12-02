@@ -3,6 +3,7 @@ class HomepageController < ApplicationController
   before_action :set_cart #SETS CARTTS
   def index
     @products = Product.order(:category) # GETS PRODUCTS FILTERED BY THEIR category
+    @orders = Order.order(:id) # GETS PRODUCTS FILTERED BY THEIR category
   end
   def contact # MADE FOR MAILER AND CONTACT PAGE
 

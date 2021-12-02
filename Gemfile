@@ -62,7 +62,8 @@ gem 'jquery-turbolinks'
 gem 'devise', '~>4.7', '>=4.7.1' # devise used for user authentication
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4' # template for views used for beautification of devise forms.
 gem 'simple_form' # make forms more beautiful
-gem 'chartkick'
+gem 'chartkick' # make graphs for admin via chartkick
+gem 'groupdate' # make gruop by day and week for chartkick
 gem 'rails-controller-testing'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

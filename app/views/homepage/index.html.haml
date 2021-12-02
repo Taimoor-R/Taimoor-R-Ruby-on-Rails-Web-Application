@@ -5,6 +5,59 @@
       .text-center.text-white
         %h1.display-4.fw-bolder=t('.titlea')
         %p.lead.fw-normal.text-white-50.mb-0=t('.subtitlea')
+
+  %table.table.table-light.table-striped
+    %thead
+      %tr
+        %th{:scope => "col"} Product Supply Chart
+        %th{:scope => "col"} Out of Stock Products
+    %tbody
+      %tr
+        %td
+          = column_chart @products.group(:title).sum(:supply), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Supply", ytitle: "Products"
+        %td
+          %table.table.table-light.table-dark
+            %thead
+              %tr
+                %th{:scope => "col"} Product Title
+                %th{:scope => "col"} Product Description
+                %th{:scope => "col"} Status
+            %tbody
+              - @products.each do |product|
+                -if product.supply <= 0
+                  %tr
+                    %td
+                      = product.title
+                    %td
+                      = product.description
+                    %td
+                      Out of Stock
+  %table.table.table-light.table-striped
+    %thead
+      %tr
+        %th{:scope => "col"} Current Orders Chart
+        %th{:scope => "col"} Current Orders List
+    %tbody
+      %tr
+        %td
+          = line_chart @orders.group(:id).sum(:created_at), width: "1000px", height: "500px", colors: ["#b00", "#666"],xtitle: "Order ID", ytitle: "Time"
+        %td
+          %table.table.table-light.table-dark
+            %thead
+              %tr
+                %th{:scope => "col"} Order ID
+                %th{:scope => "col"} Order Email
+                %th{:scope => "col"} Status
+            %tbody
+              - @orders.each do |order|
+                %tr
+                  %td
+                    = order.id
+                  %td
+                    = order.email
+                    %td
+                      Pending Dispatch
+
 -else
   %header.bg-dark.py-5
     .container.px-4.px-lg-5.my-5
