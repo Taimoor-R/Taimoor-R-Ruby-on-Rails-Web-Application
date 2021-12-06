@@ -18,6 +18,7 @@ class ProductTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 1
+    product1.category = "Music"
     product1.save
     assert product1.valid?
     product2.title = "Unique title 1"
@@ -25,6 +26,7 @@ class ProductTest < ActiveSupport::TestCase
     product2.price = 2
     product2.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product2.supply = 1
+    product2.category = "Music"
     product2.save
     refute product2.valid?
   end
@@ -35,6 +37,7 @@ class ProductTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 1
+    product1.category = "Music"
     product1.save
     assert product1.valid?
   end
@@ -47,6 +50,7 @@ class ProductTest < ActiveSupport::TestCase
     product1.price = -1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 1
+    product1.category = "Music"
     product1.save
     refute product1.valid?
     product2.title = "Unique title 11"
@@ -54,6 +58,7 @@ class ProductTest < ActiveSupport::TestCase
     product2.price = 1001
     product2.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product2.supply = 1
+    product2.category = "Music"
     product2.save
     refute product2.valid?
     product3.title = "Unique title 13"
@@ -61,6 +66,7 @@ class ProductTest < ActiveSupport::TestCase
     product3.price = 10
     product3.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product3.supply = 1
+    product3.category = "Music"
     product3.save
     assert product3.valid?
   end
@@ -71,6 +77,16 @@ class ProductTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = -1
+    product1.save
+    refute product1.valid?
+  end
+  test "Dont save Product without Category selection" do
+    product1 = Product.new
+    product1.title = "Unique title 1"
+    product1.description = "Bfdsugusgisogh"
+    product1.price = 1
+    product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
+    product1.supply = 1
     product1.save
     refute product1.valid?
   end

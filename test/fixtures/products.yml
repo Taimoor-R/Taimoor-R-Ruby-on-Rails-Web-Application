@@ -6,6 +6,7 @@ one:
   image_url: https://toppng.com/uploads/preview/error-404-looks-like-you-found-a-dead-link-11563228083ugqcbvv143.png
   price: 9.99
   supply: 1
+  category: Music
 
 two:
   title: MyString2
@@ -13,6 +14,7 @@ two:
   image_url: https://toppng.com/uploads/preview/error-404-looks-like-you-found-a-dead-link-11563228083ugqcbvv143.png
   price: 9.99
   supply: 1
+  category: Music
 
 ruby:
   title:       Programming Ruby 1.9
@@ -23,3 +25,4 @@ ruby:
   price:       49.50
   image_url:   https://toppng.com/uploads/preview/error-404-looks-like-you-found-a-dead-link-11563228083ugqcbvv143.png
   supply: 1
+  category: Music

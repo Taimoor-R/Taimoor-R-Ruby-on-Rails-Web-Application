@@ -41,7 +41,7 @@
                   %td
                     = item.quantity
                   %td
-                    = item.product.price
+                    = number_to_currency(item.product.price)
         %td
           = number_to_currency(order.total_price)
         %td

@@ -23,17 +23,6 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     sign_out @user
   end
 
-  test "should create cart" do
-    assert sign_in @user
-    assert_difference('Cart.count') do
-      post carts_url, params: { }
-    end
-
-    assert_redirected_to cart_url(Cart.last)
-  end
-
-
-
   test "should show cart" do
     assert sign_in @user
     get ('/carts/' + @cart.id.to_s)

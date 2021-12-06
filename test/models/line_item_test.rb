@@ -17,6 +17,7 @@ class LineItemTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 1
+    product1.category = "Music"
     product1.save
     assert product1.valid?
     product1.save
@@ -31,6 +32,7 @@ class LineItemTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 0
+    product1.category = "Music"
     product1.save
     refute product1.valid?
     product1.save
@@ -46,6 +48,7 @@ class LineItemTest < ActiveSupport::TestCase
     product1.price = 1
     product1.image_url = "https://commercial.bunn.com/img/image-not-available.png"
     product1.supply = 1
+    product1.category = "Music"
     product1.save
     assert product1.valid?
     product1.save

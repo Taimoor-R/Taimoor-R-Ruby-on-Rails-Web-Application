@@ -9,7 +9,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
        description: 'Product description',
        image_url: 'productimage.jpg',
        price: 20.23,
-       supply: 1
+       supply: 1,
+       category: 'Music'
        }
     user = User.create!(email: "example@mail.com",
      first_name: "name", last_name: "surename",
