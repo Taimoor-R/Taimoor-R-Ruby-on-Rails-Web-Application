@@ -40,3 +40,19 @@ Scope:
        - Product
        - Orders
     - Appropriate testing for each model.
+
+5. External Gems used:
+ - 'devise', '~>4.7', '>=4.7.1'
+ - 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
+ - 'simple_form'
+ - 'chartkick'
+ - 'groupdate'
+
+6. Login into WebApp(Devise Logins):
+    For Admin Functionality: 
+     - Email: taimoorriz@gmail.com
+     - Password: 1234asdf
+    For User Functionality:
+     - Email: timmy@gmail.com
+     - Password: 1234asdf
+     - Further information regarding admin and user can be changed in seed.rb if these emails and passwords for unforseen reasons don't work. More users(Non-            Admin) can also be generated form the webpage itself.
