@@ -4,10 +4,10 @@ An Ecommerces Website, built on an agile framework(Ruby On Rails).
 Configuration
 
 Dev Env:
-Ubuntu 20.04
-Ruby version: 2.5.1p57
-Rails version: 5.2.6 d
-Database: sqlite
+- Ubuntu 20.04
+- Ruby version: 2.5.1p57
+- Rails version: 5.2.6 d
+- Database: sqlite
 
 Scope:
 1. Views :
